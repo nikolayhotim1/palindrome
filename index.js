@@ -1,35 +1,38 @@
 'use strict';
 String.prototype.palindrome = function () {
-    let len = this.length - 1;
+    let phraseArray = this.split('');
 
-    for (let i = 0; i <= len; i++) {
-        if (this.charAt(i) !== this.charAt(len - i)) {
-            return false;
-        }
-
-        if (i === (len - i)) {
-            return true;
+    for (let i = 0; i < phraseArray.length; i++) {
+        if (phraseArray[i] === ' ') {
+            phraseArray.splice(i, 1);
         }
     }
 
-    return true;
+    let phrase = phraseArray.join('').toUpperCase();
+    let reversePhrase = phrase.split('').reverse().join('');
+
+    return (phrase === reversePhrase);
 };
 
-let phrases = ['eve', 'kayak', 'mom', 'wow', 'not a palindrome'];
+let phrases = ['Able was I ere I saw Elba', 'Anna', 'Level', 'Live not on evil', 'Not a palindrome', 'Nikolay'];
 
 for (let i = 0; i < phrases.length; i++) {
     let phrase = phrases[i];
 
     if (phrase.palindrome()) {
-        console.log('"' + phrase + '" is a palindrome');
+        console.log('"' + phrase + '" is a palindrome.');
     } else {
-        console.log('"' + phrase + '" is not a palindrome');
+        console.log('"' + phrase + '" isn\'t a palindrome.');
     }
 }
 /*
-"eve" is a palindrome
-"kayak" is a palindrome
-"mom" is a palindrome
-"wow" is a palindrome
-"not a palindrome" is not a palindrome
+"Able was I ere I saw Elba" is a palindrome.
+"Anna" is a palindrome.
+"Level" is a palindrome.
+"Live not on evil" is a palindrome.
+"Not a palindrome" isn't a palindrome.
+"Nikolay" isn't a palindrome.
+"Katty" isn't a palindrome.
+"Racecar" is a palindrome.
+"Wow" is a palindrome.
 */
