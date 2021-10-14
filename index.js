@@ -3,8 +3,9 @@ String.prototype.palindrome = function () {
     let phraseArray = this.split('');
 
     for (let i = 0; i < phraseArray.length; i++) {
-        if (phraseArray[i] === ' ') {
+        if (phraseArray[i].valueOf().toLowerCase() === phraseArray[i].valueOf().toUpperCase()) {
             phraseArray.splice(i, 1);
+            i--;
         }
     }
 
@@ -14,7 +15,7 @@ String.prototype.palindrome = function () {
     return (phrase === reversePhrase);
 };
 
-let phrases = ['Able was I ere I saw Elba', 'Anna', 'Level', 'Live not on evil', 'Not a palindrome', 'Nikolay'];
+let phrases = ['A man, a plan, a canal-Panama', 'Able was I ere I saw Elba', 'Madam, I\'m Adam', 'Level', '"Not New York", – Roy went on', 'Not a palindrome', 'Nikolay', 'Was it a car or a cat I saw?'];
 
 for (let i = 0; i < phrases.length; i++) {
     let phrase = phrases[i];
@@ -25,14 +26,3 @@ for (let i = 0; i < phrases.length; i++) {
         console.log('"' + phrase + '" isn\'t a palindrome.');
     }
 }
-/*
-"Able was I ere I saw Elba" is a palindrome.
-"Anna" is a palindrome.
-"Level" is a palindrome.
-"Live not on evil" is a palindrome.
-"Not a palindrome" isn't a palindrome.
-"Nikolay" isn't a palindrome.
-"Katty" isn't a palindrome.
-"Racecar" is a palindrome.
-"Wow" is a palindrome.
-*/
