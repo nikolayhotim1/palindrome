@@ -15,7 +15,7 @@ String.prototype.palindrome = function () {
     return (phrase === reversePhrase);
 };
 
-let phrases = ['A man, a plan, a canal-Panama', 'Able was I ere I saw Elba', 'Madam, I\'m Adam', 'Level', '"Not New York", – Roy went on', 'Not a palindrome', 'Nikolay', 'Was it a car or a cat I saw?'];
+let phrases = ['Bob', 'Katty', 'Not a palindrome', 'My gym', 'Mum', 'Pull-up', 'Sir, I\'m Iris', 'Was it a car or a cat I saw?'];
 
 for (let i = 0; i < phrases.length; i++) {
     let phrase = phrases[i];
